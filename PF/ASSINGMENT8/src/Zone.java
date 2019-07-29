@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * define the zone class
+ *
+ */
 public class Zone {
 	int count = 0;
 	String zoneName;
@@ -12,6 +16,13 @@ public class Zone {
 	private String category;
 	private Scanner sc = new Scanner(System.in);
 
+	/**
+	 * @param zoneCapacity  define the zone capacity
+	 * @param name define the zone name
+	 * @param hasPark define that park is available or not
+	 * @param hasCanteen define that canteen is available or not
+	 * @param category define the category of the zone
+	 */
 	public Zone(int zoneCapacity, String name, boolean hasPark,boolean hasCanteen, String category) {
 		this.maxCage = zoneCapacity;
 		this.zoneName = name;
@@ -21,6 +32,10 @@ public class Zone {
 		this.category = category;
 	}
 
+	/**
+	 * @param AnimalToAdded is object of the animal class
+	 * @return true if animal is add in cage
+	 */
 	public boolean AddAnimaltoCage(Animal AnimalToAdded) {
 		boolean cagefound = false;
 		for (Cage x : getCageList()) {
@@ -41,6 +56,10 @@ public class Zone {
 
 	}
 
+	/**
+	 * @param type is the animal name
+	 * @return true if cage is added or not
+	 */
 	private boolean addCage(String type) {
 		if (maxCage != getCageList().size()) {
 			System.out.println("Enter capacity of new cage");
@@ -56,26 +75,44 @@ public class Zone {
 		return false;
 	}
 
+	/**
+	 * @return the cage list
+	 */
 	public ArrayList<Cage> getCageList() {
 		return cageList;
 	}
 
+	/**
+	 * @return zone Id
+	 */
 	public int getZooID() {
 		return zoneID;
 	}
 
+	/**
+	 * @return true if park is in the zone
+	 */
 	public boolean hasPark() {
 		return hasPark;
 	}
 
+	/**
+	 * @return ture if canteen in zone
+	 */
 	public boolean hasCanteen() {
 		return hasCanteen;
 	}
 
+	/**
+	 * @return category of the zone
+	 */
 	public String getCategory() {
 		return category;
 	}
 
+	/**
+	 * display the capacity and zone Id or animal name
+	 */
 	public void display() {
 		 System.out.println("details Of Zone :" +zoneID +"  "+zoneName);
 	        System.out.println("cageAnimalType  CageCapacity  NoofAnimalInCage" );

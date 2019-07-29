@@ -24,7 +24,7 @@ public class Zoo {
         System.out.println("1 Lion");
         System.out.println("2 Tiger");
         System.out.println("3 Snake");
-        System.out.println("4 Parrot");
+        System.out.println("4 Peacock");
 
         do{
             System.out.println("enter choice : ");
