@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * @author krishan
+ * @author Murtaza Ali
  * TestEvaluateExpression tests the EvaluateExpression class
  *
  */
