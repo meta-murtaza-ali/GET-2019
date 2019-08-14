@@ -34,8 +34,7 @@ public class EmployeeNode {
 	}
 
 	/**
-	 * @param data
-	 *            set employee data
+	 * @param data set employee data
 	 */
 	public void setData(Employee data) {
 		this.data = data;
