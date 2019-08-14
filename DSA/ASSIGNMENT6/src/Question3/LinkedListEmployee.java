@@ -24,10 +24,8 @@ public class LinkedListEmployee {
 	}
 
 	/**
-	 * @param list
-	 *            is Link List of employee
-	 * @param employeeObject
-	 *            of employee node class
+	 * @param list is Link List of employee
+	 * @param employeeObject of employee node class
 	 * @return list of employee after insertion
 	 * @throws Exception
 	 */
@@ -61,10 +59,8 @@ public class LinkedListEmployee {
 	}
 
 	/**
-	 * @param start
-	 *            node is pointer to the first node of list
-	 * @param end
-	 *            node is pointer to the last node of list
+	 * @param start node is pointer to the first node of list
+	 * @param end node is pointer to the last node of list
 	 * @return leftmost node of the list
 	 */
 	private EmployeeNode quick(EmployeeNode start, EmployeeNode end) {
@@ -79,10 +75,8 @@ public class LinkedListEmployee {
 	}
 
 	/**
-	 * @param start
-	 *            node is pointer to the first node of list
-	 * @param end
-	 *            end node is pointer to the last node of list
+	 * @param start node is pointer to the first node of list
+	 * @param end end node is pointer to the last node of list
 	 * @return node after partition
 	 */
 	private EmployeeNode[] partition(EmployeeNode start, EmployeeNode end) {
@@ -112,8 +106,7 @@ public class LinkedListEmployee {
 	}
 
 	/**
-	 * @param list
-	 *            is Link List of employee
+	 * @param list is Link List of employee
 	 * @throws Exception
 	 */
 	public void display(EmployeeNode list) throws Exception {
