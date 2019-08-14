@@ -37,8 +37,7 @@ public class Employee {
 	}
 
 	/**
-	 * @param name
-	 *            set employee name
+	 * @param name set employee name
 	 */
 	public void setName(String name) {
 		this.name = name;
