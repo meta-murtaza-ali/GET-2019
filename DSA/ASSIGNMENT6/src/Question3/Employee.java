@@ -23,8 +23,7 @@ public class Employee {
 	}
 
 	/**
-	 * @param empId
-	 *            set employeeId
+	 * @param empId set employeeId
 	 */
 	public void setEmpId(int empId) {
 		this.empId = empId;
@@ -53,8 +52,7 @@ public class Employee {
 	}
 
 	/**
-	 * @param salary
-	 *            set salary of the employee
+	 * @param salary set salary of the employee
 	 */
 	public void setSalary(int salary) {
 		this.salary = salary;
