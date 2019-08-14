@@ -66,8 +66,7 @@ public class Employee {
 	}
 
 	/**
-	 * @param age
-	 *            set age of the employee
+	 * @param age set age of the employee
 	 */
 	public void setAge(int age) {
 		this.age = age;
