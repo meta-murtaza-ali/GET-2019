@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>StudentDetail</display-name>
+  <servlet>
+ <servlet-name>add</servlet-name>
+ <servlet-class>server.AddDataServer</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>add</servlet-name>
+ <url-pattern>/addData</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>show</servlet-name>
+ <servlet-class>server.ShowStudents</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>show</servlet-name>
+ <url-pattern>/ShowStudent</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>update</servlet-name>
+ <servlet-class>server.ShowStudentDetails</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>update</servlet-name>
+ <url-pattern>/updateStudent</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>updateDetail</servlet-name>
+ <servlet-class>server.UpdateStudentDetail</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>updateDetail</servlet-name>
+ <url-pattern>/final_update</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>searchDetail</servlet-name>
+ <servlet-class>server.SearchStudent</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>searchDetail</servlet-name>
+ <url-pattern>/searchData</url-pattern>
+ </servlet-mapping>
+</web-app>
