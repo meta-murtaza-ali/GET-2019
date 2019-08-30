@@ -22,7 +22,6 @@ public class AddDataServer extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws IOException, ServletException {
-
 		String first_name = req.getParameter("firstName");
 		String last_name = req.getParameter("lastName");
 		String father_name = req.getParameter("fatherName");
