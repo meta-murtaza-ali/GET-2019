@@ -42,9 +42,7 @@ public class ProcessStudent {
 			} catch (Exception e) {
 				return 0;
 			}
-
 			statement.close();
-
 			query = QueryStudent.getStudentId();
 			PreparedStatement statement2 = connection.prepareStatement(query);
 			statement2.setString(1, data.getEmail());
@@ -53,14 +51,10 @@ public class ProcessStudent {
 				student_id = rset.getInt("student_id");
 			}
 			connection.close();
-
 		} catch (Exception Exception) {
 			throw (new Exception());
-
 		}
-
 		return student_id;
-
 	}
 
 	/**
@@ -94,7 +88,6 @@ public class ProcessStudent {
 			e.printStackTrace();
 		}
 		return data;
-
 	}
 
 	/**
