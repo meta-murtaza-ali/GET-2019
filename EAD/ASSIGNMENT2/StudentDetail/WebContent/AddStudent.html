@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Form</title>
+<style>
+input {
+	width: 200px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+}
+
+input[type=text] {
+	border: 4px solid #e4d7f7;
+	border-radius: 5px;
+}
+
+input[type=email] {
+	border: 4px solid #e4d7f7;
+	border-radius: 5px;
+}
+
+input[type=number] {
+	border: 4px solid #e4d7f7;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	background-color: #008CBA;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+body {
+	background-color: #D3D3D3;
+}
+</style>
+</head>
+<body>
+	<form action="addData" method="POST" name="registrationform" id="form1"
+		onsubmit="return validateRegForm()">
+
+
+		<table align="center" cellpadding="10" cellspacing="10">
+			<th colspan="2"><center>
+					<h1>Add Student Detail</h1>
+				</center></th>
+			<br></br>
+			<tr>
+
+				<td><label for="firstName :">First Name</label></td>
+				<td><input type="text" name="firstName" id="fname"
+					placeholder="Type First Name here" required></td>
+				<td><span id="fname_error"></span></td>
+			</tr>
+
+			<tr>
+				<td><label for="lastName">Last Name</label></td>
+				<td><input type="text" name="lastName" id="lname"
+					placeholder="Type Last Name here" required></td>
+				<td><span id="lname_error"></span></td>
+			</tr>
+			<tr>
+				<td><label for="fatherName">Father Name</label></td>
+				<td><input type="text" name="fatherName" id="faname"
+					placeholder="Type Father Name here" required></td>
+				<td><span id="faname_error"></span></td>
+			</tr>
+			<tr>
+				<td><label for="emailId">Email-Id</label></td>
+				<td><input type="email" name="emailId" id="email_id"
+					placeholder="Type Email Id here" required></td>
+				<td><span id="email_error"></span></td>
+			</tr>
+			<tr>
+				<td><label for="class">Class</label></td>
+				<td><input type="text" name="class" id="class_aname"
+					placeholder="Type Class Name here" required></td>
+				<td><span id="classname_error"></span></td>
+			</tr>
+			<tr>
+				<td><label for="age">Age</label></td>
+				<td><input type="number" name="age" id="age_id"
+					placeholder="Type Age here" required></td>
+				<td><span id="age_error"></span></td>
+			</tr>
+			<tr>
+
+				<td colspan="2"><center>
+						<input type="submit" value="Register">
+					</center></td>
+
+
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
