@@ -143,6 +143,9 @@ public class ProcessStudent {
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, firstName);
 			ResultSet rset = statement.executeQuery();
+			if(!rset.next()) {
+				return null;
+			}
 			while (rset.next()) {
 				StudentData student = new StudentData();
 				student.setStudentId(rset.getInt("student_id"));
@@ -179,6 +182,9 @@ public class ProcessStudent {
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, lastName);
 			ResultSet rset = statement.executeQuery();
+			if(!rset.next()) {
+				return null;
+			}
 			while (rset.next()) {
 				StudentData student = new StudentData();
 				student.setStudentId(rset.getInt("student_id"));

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * This is Show Search Students.
+ * 
  * @author Murtaza Ali
  *
  */
@@ -23,44 +24,50 @@ public class ShowSearchStudents {
 		out.print("<nav>");
 		out.print("<a href='index.html'>Go To Home</a>");
 		out.print("</nav>");
-		out.print("<table  align=center  cellspacing =10px cellpadiing = 10px >");
-		out.print("<tr>");
-		out.print("<th>Student_Id</th>");
-		out.print("<th>First_Name</th>");
-		out.print("<th>Last_Name</th>");
-		out.print("<th>Father_Name</th>");
-		out.print("<th>Email</th>");
-		out.print("<th>Class_Name</th>");
-		out.print("<th>Age</th>");
-		out.print("</tr>");
-		for (StudentData student_data : data) {
+		if (data == null) {
+			out.print("<center><h1>Data is not Found!</h1></center>");
+
+		} else {
+			out.print("<table  align=center  cellspacing =10px cellpadiing = 10px >");
 			out.print("<tr>");
-			out.print("<form action='updateStudent' method = 'Get'>");
-			out.print("<td >" + "<input type='hidden' name='id' value="
-					+ student_data.getStudentId() + ">"
-					+ student_data.getStudentId() + "</td>");
-			out.print("<td>" + "<input type='hidden' name='firstname' value="
-					+ student_data.getFirstName() + ">"
-					+ student_data.getFirstName() + "</td>");
-			out.print("<td><input type ='hidden' name='lastname' value="
-					+ student_data.getLastName() + ">"
-					+ student_data.getLastName() + "</td>");
-			out.print("<td><input type ='hidden' name='fathername' value="
-					+ student_data.getFatherName() + ">"
-					+ student_data.getFatherName() + "</td>");
-			out.print("<td><input type ='hidden' name='email' value="
-					+ student_data.getEmail() + ">" + student_data.getEmail()
-					+ "</td>");
-			out.print("<td><input type ='hidden' name='classname' value="
-					+ student_data.getClassName() + ">"
-					+ student_data.getClassName() + "</td>");
-			out.print("<td><input type ='hidden' name='age' value="
-					+ student_data.getAge() + ">" + student_data.getAge()
-					+ "</td>");
-			out.print("</form>");
+			out.print("<th>Student_Id</th>");
+			out.print("<th>First_Name</th>");
+			out.print("<th>Last_Name</th>");
+			out.print("<th>Father_Name</th>");
+			out.print("<th>Email</th>");
+			out.print("<th>Class_Name</th>");
+			out.print("<th>Age</th>");
 			out.print("</tr>");
+			for (StudentData student_data : data) {
+				out.print("<tr>");
+				out.print("<form action='updateStudent' method = 'Get'>");
+				out.print("<td >" + "<input type='hidden' name='id' value="
+						+ student_data.getStudentId() + ">"
+						+ student_data.getStudentId() + "</td>");
+				out.print("<td>"
+						+ "<input type='hidden' name='firstname' value="
+						+ student_data.getFirstName() + ">"
+						+ student_data.getFirstName() + "</td>");
+				out.print("<td><input type ='hidden' name='lastname' value="
+						+ student_data.getLastName() + ">"
+						+ student_data.getLastName() + "</td>");
+				out.print("<td><input type ='hidden' name='fathername' value="
+						+ student_data.getFatherName() + ">"
+						+ student_data.getFatherName() + "</td>");
+				out.print("<td><input type ='hidden' name='email' value="
+						+ student_data.getEmail() + ">"
+						+ student_data.getEmail() + "</td>");
+				out.print("<td><input type ='hidden' name='classname' value="
+						+ student_data.getClassName() + ">"
+						+ student_data.getClassName() + "</td>");
+				out.print("<td><input type ='hidden' name='age' value="
+						+ student_data.getAge() + ">" + student_data.getAge()
+						+ "</td>");
+				out.print("</form>");
+				out.print("</tr>");
+			}
+			out.print("</table>");
 		}
-		out.print("</table>");
 		out.print("</body><br></br>");
 
 	}
