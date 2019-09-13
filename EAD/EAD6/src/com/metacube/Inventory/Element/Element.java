@@ -1,8 +1,9 @@
 package com.metacube.Inventory.Element;
 
-
-
-//@XmlRootElement
+/**
+ * @author Murtaza Ali
+ * This is pojo class of a element.
+ */
 public class Element {
 	private String name;
 	private int quantity;
