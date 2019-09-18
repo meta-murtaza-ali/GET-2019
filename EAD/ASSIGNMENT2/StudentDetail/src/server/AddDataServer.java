@@ -49,7 +49,6 @@ public class AddDataServer extends HttpServlet {
 			} else {
 				out.print("<center><h2>Your registration Id is" + student_id
 						+ ".</h2></center>");
-
 			}
 		} catch (Exception e) {
 			out.print("<h1><center>Some error occured!! Please try after sometime.</center></h2>");
