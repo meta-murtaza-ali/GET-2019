@@ -1,304 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration Form</title>
-    <script >
-        
-        function validateRegForm() {
+    <style>
+        body {
+            background-color: lightblue;
+        }
 
-                if((document.getElementById('fname').value) == "") {
-                     document.getElementById('fname_error').innerHTML = "Enter Name";
-                     return false;
-                }
-                if((document.getElementById('fname').value).length<2 ) {
-                     document.getElementById('fname_error').innerHTML = "Name must be contain atleast two charcter";
-                     return false;
-                 }
-                 if((/^[A-Z]*[a-z]{2,}/.test(document.getElementById('fname').value)) == false) {
-                     document.getElementById('fname_error').innerHTML = "Name not contain any number";
-                     return false;
-                 }
-                 if((document.getElementById('lname').value) == "") {
-                     document.getElementById('lname_error').innerHTML = "Enter Name";
-                     return false;
-                }
-                if((document.getElementById('lname').value).length<2 ) {
-                     document.getElementById('lname_error').innerHTML = "Name must be contain atleast two charcter";
-                     return false;
-                 } 
-                 if((/^[A-Z]*[a-z]{2,}/.test(document.getElementById('lname').value)) == false) {
-                     document.getElementById('lname_error').innerHTML = "Name not contain any number";
-                     return false;
-                 }
-                 if((document.getElementById('m1').checked == false) && (document.getElementById('f1').checked == false)) {
-                     document.getElementById('gender_error').innerHTML = "Must be select one option";
-                     return false;
-                 }
-                 if(document.getElementById('email_id').value == "") {
-                    document.getElementById('email_error').innerHTML = "enter  email";
-                     return false;
-                 }
-                 if(document.getElementById('email_id').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) == false) {
-                     document.getElementById('email_error').innerHTML = "enter valid email";
-                     return false;
-                 }
-                 if((document.getElementById('password').value) == "") {
-                     document.getElementById('pass_error').innerHTML = "enter password";
-                     return false;
-                 }
-                 if((document.getElementById('password').value).length<8) {
-                     document.getElementById('pass_error').innerHTML = "password must contain atleast 8 character";
-                     return false;
-                 }
-                 if((/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(document.getElementById('password').value)) == false) {
-                     document.getElementById('pass_error').innerHTML = "enter in correct format";
-                     return false;
-                 }
-                 if(!check("confirm_password")) {
-                     return false;
-                 }
-                 if((document.getElementById('contact').value) == "") {
-                     document.getElementById('con_error').innerHTML = "enter contact number";
-                     return false;
-                 }
-                 if((document.getElementById('contact').value).length<8) {
-                     document.getElementById('con_error').innerHTML = "contact number must contain 8 number";
-                     return false;
-                 }
-                 if((/^[0-9]{10}/.test(document.getElementById('contact').value)) == false) {
-                     document.getElementById('con_error').innerHTML = "enter correct contact number";
-                     return false;
-                 }
-                 
-                 
-                 
+        a:link {
+            color: maroon;
+        }
 
-               document.getElementById("registerFor").style.display = "none";
-               document.getElementById("carRegistration").style.display = "block";
-               return false;
-            
+        a:visited {
+            color: green;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            color: yellow;
+        }
+
+        table {
+            background-color: #d1ede7;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+
+        function checkFirstName() {
+            var error_flag = 0;
+            if ((document.getElementById('fname').value).length < 2) {
+                document.getElementById('fname_error').innerHTML = "Name must be contain atleast two charcter.";
+                error_flag = 1;
+            } else if ((/^[A-Z]*[a-z]{2,}/
+                .test(document.getElementById('fname').value)) == false) {
+                document.getElementById('fname_error').innerHTML = "Name not contain any number.";
+                error_flag = 1;
+            } else {
+                document.getElementById('fname_error').innerHTML = "";
             }
-    
-            function check(id) {
-                
-                if(document.getElementById('password').value ==
-                    document.getElementById(id).value) {
-                    
-                    document.getElementById('message').innerHTML = "match";
-                    return true;
-                    
-                } else {
-                    document.getElementById('message').innerHTML = "no match";
-                    return false;
-                }
-            }
-
-            function valCarform() {
-                if((document.getElementById('car_name').value) == "") {
-                    document.getElementById('car_error').innerHTML = "Enter car name";
-                    return false;
-                }
-                if((/^[A-Z]*[a-z]{2,}/).test(document.getElementById('car_name').value) == false) {
-                    document.getElementById('car_error').innerHTML = "Enter correct car name";
-                    return false;
-                }
-                if(document.getElementById('veh_type').value == "") {
-                    document.getElementById('veh_error').innerHTML = "select any option";
-                    return false;
-                }
-                if((document.getElementById('veh_num').value) == "") {
-                    document.getElementById('num_error').innerHTML = "enter vehicle number";
-                    return false;
-                }
-                if((/^(?=.*\d)(?=.*[A-Z]).{9,10}/).test(document.getElementById('veh_num').value) == false) {
-                    document.getElementById('num_error').innerHTML = "enter correct number";
-                    return false;
-                }
-                if((document.getElementById('employee_id').value) == "") {
-                    document.getElementById('emp_error').innerHTML = "enter employee id";
-                    return false;
-                }
-                if((/^[A-Z]*[a-z]*[0-9]{1,}/).test(document.getElementById('employee_id').value) == false) {
-                    document.getElementById('emp_error').innerHTML = "enter correct employee id";
-                    return false;
-                }
-                
-                if(document.getElementById('pass_type').value == "") {
-                    document.getElementById('pass_error').innerHTML = "select any option";
-                    return false;
-                }
-                document.getElementById("registerFor").style.display = "none";
-                document.getElementById("carRegistration").style.display = "none";
-                document.getElementById("Thank_you").style.display = "block";
+            if (error_flag == 1) {
                 return false;
-            }
-            
-            function calculate() {
-                var type = document.getElementById('veh_type').value;
-                if(type == "Cycle"){
-                    var passtype = document.getElementById('pass_type').value;
-                    if(passtype == "daily") {
-                        document.getElementById('price').innerHTML = "5";
-                    }else if(passtype == "weekly") {
-                        document.getElementById('price').innerHTML = "100";
-                    }else if(passtype == "monthly") {
-                        document.getElementById('price').innerHTML = "500";
-                    }
-                }else if(type == "Two wheeler") {
-                    var passtype = document.getElementById('pass_type').value;
-                    if(passtype == "daily") {
-                        document.getElementById('price').innerHTML = "10";
-                    }else if(passtype == "weekly") {
-                        document.getElementById('price').innerHTML = "200";
-                    }else if(passtype == "monthly") {
-                        document.getElementById('price').innerHTML = "1000";
-                    }
-                }else if(type == "Four wheeler") {
-                    var passtype = document.getElementById('pass_type').value;
-                    if(passtype == "daily") {
-                        document.getElementById('price').innerHTML = "20";
-                    }else if(passtype == "weekly") {
-                        document.getElementById('price').innerHTML = "500";
-                    }else if(passtype == "monthly") {
-                        document.getElementById('price').innerHTML = "3500";
-                    }
-                }
+            } else {
                 return true;
             }
-        </script>
-        
-</head>
-<body >
-    
-    <fieldset>
-            <div id="registerFor" name="mydiv">
-                <form action="" method="POST" name="registrationform" id="form1" onsubmit="return validateRegForm()" >
-                    
-                        
-                        <table  align="center" cellspacing="0px" width="60%"  cellpadding="10">
-                                <th colspan="2"><center> Registration Form</center></th>
-                        <tr>
-                                
-                                <td> <label for="firstName :">FirstName</label></td>
-                                <td><input type="text"  name="FirstName"  id="fname"  placeholder="Type firstName here" > </td>
-                                <td><span id="fname_error"></span></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><label for="lastName">LastName</label></td>
-                                <td><input type="text" name="LastName" id="lname"  placeholder="Type lastName here" ></td>
-                                <td><span id="lname_error"></span></td>
-                            </tr>
-                            <tr>
-                            <td><label for="gender">Gender</label></td> 
-                                <td><input type="radio" id="m1" name="gender" value="male" >Male 
-                                <input type="radio" id="f1" name="gender" value="female" >Female </td>
-                                <td><span id="gender_error"></span></td>
-                            </tr> 
-                            <tr>
-                                <td><label for="emailId">EmailId</label></td>
-                                <td><input type="text"  name="emailId" id="email_id"  placeholder="Type Email id here"></td>
-                                <td><span id="email_error"></span></td>
-                            </tr>
-                            <tr>
-                                <td><label for="password">Password</label></td>
-                                <td><input type="password" name="password" id="password"  placeholder="password" ></td>
-                                <td><span id="pass_error"></span></td>
-                            </tr>
-                            <tr>
-                                    <td colspan="3"><span> *Password should contains Uppercase, 
-                                            Lowercase, Numeric, 
-                                            Alphanumeric, and length 
-                                            minimum 8</span> </td>
-                            </tr>
-                            <tr> 
-                                <td><label for="confirm password">Confirm password</label></td>
-                                <td><input type="password" name="confirm password" id="confirm_password" oninput="return check(this.id)"placeholder="confirm password" ></td>
-                                <td><span id="message"></span></td>
-                            </tr>
-                            <tr>
-                                <td><label for="contactnumber">ContactNo.</label></td>
-                                <td><input type="int" id="contact" name="contactnumber" maxlength="10" size="10" placeholder="contact no." ></td>
-                                <td><span id="con_error"></span></td>
-                            </tr>
-                            <tr>
-                                
-                                <td colspan="2"><center><input type="submit" value="Register" ></center></td>
-                                
-                            
-                            </tr>
-                        </table>
-                </form>
+
+        }
+        function checkLastName() {
+            var error_flag = 0;
+            if ((document.getElementById('lname').value).length < 2) {
+                document.getElementById('lname_error').innerHTML = "Name must be contain atleast two charcter";
+                error_flag = 1;
+            } else if ((/^[A-Z]*[a-z]{2,}/
+                .test(document.getElementById('lname').value)) == false) {
+                document.getElementById('lname_error').innerHTML = "Name not contain any number";
+                error_flag = 1;
+            } else {
+                document.getElementById('lname_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkGender() {
+            var error_flag = 0;
+            if ((document.getElementById('m1').checked == false)
+                && (document.getElementById('f1').checked == false)) {
+                document.getElementById('gender_error').innerHTML = "Must be select one option.";
+                error_flag = 1;
+            } else {
+                document.getElementById('gender_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkEmail() {
+            var error_flag = 0;
+            if (document.getElementById('email_id').value == "") {
+                document.getElementById('email_error').innerHTML = "Enter  Email.";
+                error_flag = 1;
+            } else if ((/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/).test(document.getElementById('email_id').value)
+                == false) {
+                document.getElementById('email_error').innerHTML = "Enter Valid Email.";
+                error_flag = 1;
+            } else {
+                document.getElementById('email_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkPassword() {
+            var error_flag = 0;
+            if ((document.getElementById('password').value) == "") {
+                document.getElementById('pass_error').innerHTML = "Enter password.";
+                error_flag = 1;
+            } else if ((document.getElementById('password').value).length < 8) {
+                document.getElementById('pass_error').innerHTML = "Password must contain atleast 8 character.";
+                error_flag = 1;
+            } else if ((/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(document
+                .getElementById('password').value)) == false) {
+                document.getElementById('pass_error').innerHTML = "Enter in correct format.";
+                error_flag = 1;
+            } else {
+                document.getElementById('pass_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkContactNumber() {
+            var error_flag = 0;
+            if ((document.getElementById('contact').value) == "") {
+                document.getElementById('con_error').innerHTML = "Enter contact number.";
+                error_flag = 1;
+            } else if ((document.getElementById('contact').value).length < 8) {
+                document.getElementById('con_error').innerHTML = "Contact number must contain 8 number.";
+                error_flag = 1;
+            } else if ((/^[0-9]{10}/.test(document.getElementById('contact').value)) == false) {
+                document.getElementById('con_error').innerHTML = "Enter correct contact number.";
+                error_flag = 1;
+            } else {
+                document.getElementById('con_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkOrganization() {
+            var error_flag = 0;
+            if (document.getElementById('org_type').value == "") {
+                document.getElementById('org_error').innerHTML = "Select any option";
+                error_flag = 1;
+            } else {
+                document.getElementById('org_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function validateRegForm() {
+            var error_flag = 0;
+            if ((document.getElementById('fname').value) == "") {
                 
-            </div>
-            <div  id="carRegistration" style="display:none">
-                        <form action="" method="post"  name="form2" onsubmit=" return valCarform()" >
-                            <table align="center">
-                                <th colspan="3"><p>
-                                        You have succesfully registered : <strong> Registration_Id is 1</strong>
-                                    </p></th>
-                                <tr>
-                                    <td><label for="car name">CarName</label></td>
-                                    <td><input type="text" id="car_name" name="CarName" placeholder="car name" ></td>
-                                    <td><span id="car_error"></span></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="type">Vehicle Type</label></td>
-                                    <td><select name="type" id="veh_type" >
-                                            <option value="">Selectoption</option>
-                                            <option value="Cycle">Cycle</option>
-                                            <option value="Two wheeler">Two wheeler</option>
-                                            <option value="Four wheeler">Four wheeler</option>
-                                    </select></td>
-                                    <td><span id="veh_error"></span></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="vehicle number">Vehicle Number</label></td>
-                                    <td><input type="int" id="veh_num" name="vehicle number"  placeholder="vehicle Number"  ></td>
-                                    <td><span>Ex:RJ17CAXXXX</span><br><span id="num_error"></span></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td><label for="Employee_id">EmployeeId</label></td>
-                                   <td><input type="text" id="employee_id" name="Employee_id"  placeholder="Employee_id" ></td>
-                                   <td><span id="emp_error"></span></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="Discription">Discription</label></td>
-                                    
-                                    <td><textarea name="Discription" id="Discription" cols="30" rows="10" >
-                                        
-                                    </textarea></td>
-                                </tr>
-                                <tr>
-                                      <td><label for="">Pass type</label></td>  
-                                    <td><select name="typeofpass" id="pass_type" onclick="return calculate()">
-                                        <option value="">Selectoption</option>
-                                        <option value="daily">Daily</option>
-                                        <option value="weekly">Weekly</option>
-                                        <option value="monthly">Monthly</option>
-                                    </select><span id="pass_error"></span></td>
-                                      
-                                </tr>
-                                <tr>
-                                    <td>Total Price(INR) =
-                                    <span id="price"></span>Rs</td>
-                                </tr>
-                                <tr>
-                                   <td colspan="2"><center><input type="Submit" name="CollectPass"></center></td> 
-                                </tr>
-                            </table>
-                        </form>
-            </div>
-            <div id="Thank_you" style="display: none">
-                <center>
-                    <p><strong>Thank You</strong></p>
-                </center>
-            </div>
-        
+                document.getElementById('fname_error').innerHTML = "Enter First Name.";
+                error_flag = 1;
+            } else if (!checkFirstName()) {
+                error_flag = 1;
+            }
+            if ((document.getElementById('lname').value) == "") {
+                document.getElementById('lname_error').innerHTML = "Enter Last Name.";
+                error_flag = 1;
+            } else if (!checkLastName()) {
+                error_flag = 1;
+            }
+            if (!checkGender()) {
+                error_flag = 1;
+            }
+            if (!checkEmail()) {
+                error_flag = 1;
+            }
+            if (!checkPassword()) {
+                error_flag = 1;
+            }
+
+            if (!check("confirm_password")) {
+                error_flag = 1;
+            }
+            if (!checkContactNumber()) {
+                error_flag = 1;
+            }
+            if (!checkOrganization()) {
+                error_flag = 1;
+            }
+            if (error_flag == 1) {
+                return false;
+            }
+            document.getElementById("registerFor").style.display = "none";
+            document.getElementById("carRegistration").style.display = "block";
+            return false;
+        }
+
+        function check(id) {
+
+            if (document.getElementById('password').value ==
+                document.getElementById(id).value) {
+
+                document.getElementById('message').innerHTML = "match";
+                return true;
+
+            } else {
+                document.getElementById('message').innerHTML = "no match";
+                return false;
+            }
+        }
+
+        function checkCarName() {
+            var error_flag = 0;
+            if ((document.getElementById('car_name').value) == "") {
+                document.getElementById('car_error').innerHTML = "Enter Car Name.";
+                error_flag = 1;
+            } else if ((/^[A-Z]*[a-z]{2,}/).test(document
+                .getElementById('car_name').value) == false) {
+                document.getElementById('car_error').innerHTML = "Enter Correct Car Name.";
+                error_flag = 1;
+            } else {
+                document.getElementById('car_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkVehicleType() {
+            var error_flag = 0;
+            if (document.getElementById('veh_type').value == "") {
+                document.getElementById('veh_error').innerHTML = "Select any option.";
+                error_flag = 1;
+            } else {
+                document.getElementById('veh_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkVehicleNumber() {
+            var error_flag = 0;
+            if ((document.getElementById('veh_num').value) == "") {
+                document.getElementById('num_error').innerHTML = "Enter vehicle Number.";
+                error_flag = 1;
+            } else if ((/^(?=.*\d)(?=.*[A-Z]){9,10}/).test(document
+                .getElementById('veh_num').value) == false) {
+                document.getElementById('num_error').innerHTML = "Enter Correct Vehicle Number.";
+                error_flag = 1;
+            } else {
+                document.getElementById('num_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkPassType() {
+            var error_flag = 0;
+            if (document.getElementById('pass_type').value == "") {
+                document.getElementById('pass_error').innerHTML = "Select any option.";
+                error_flag = 1;
+            } else {
+                document.getElementById('pass_error').innerHTML = "";
+            }
+            if (error_flag == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function valCarform() {
+            var error_flag = 0;
+            if (!checkCarName()) {
+                error_flag = 1;
+            }
+            if (!checkVehicleType()) {
+                error_flag = 1;
+            }
+            if (!checkVehicleNumber()) {
+                error_flag = 1;
+            }
+            if (!checkPassType()) {
+                error_flag = 1;
+            }
+            if (error_flag == 1) {
+                return false;
+            } 
+            document.getElementById("registerFor").style.display = "none";
+            document.getElementById("carRegistration").style.display = "none";
+            document.getElementById("Thank_you").style.display = "block";
+            return false;
+        }
+
+        function calculate() {
+            var type = document.getElementById('veh_type').value;
+            if (type == "Cycle") {
+                var passtype = document.getElementById('pass_type').value;
+                if (passtype == "daily") {
+                    document.getElementById('pass_price').value = "5";
+                    document.getElementById('price').innerHTML = "5";
+
+                } else if (passtype == "weekly") {
+                    document.getElementById('pass_price').value = "100";
+                    document.getElementById('price').innerHTML = "100";
+                } else if (passtype == "monthly") {
+                    document.getElementById('pass_price').value = "500";
+                    document.getElementById('price').innerHTML = "500";
+                }
+            } else if (type == "Two wheeler") {
+                var passtype = document.getElementById('pass_type').value;
+                if (passtype == "daily") {
+                    document.getElementById('pass_price').value = "10";
+                    document.getElementById('price').innerHTML = "10";
+                } else if (passtype == "weekly") {
+                    document.getElementById('pass_price').value = "200";
+                    document.getElementById('price').innerHTML = "200";
+                } else if (passtype == "monthly") {
+                    document.getElementById('pass_price').value = "1000";
+                    document.getElementById('price').innerHTML = "1000";
+                }
+            } else if (type == "Four wheeler") {
+
+                var passtype = document.getElementById('pass_type').value;
+                if (passtype == "daily") {
+                    document.getElementById('pass_price').value = "20";
+                    document.getElementById('price').innerHTML = "20";
+                } else if (passtype == "weekly") {
+                    document.getElementById('pass_price').value = "500";
+                    document.getElementById('price').innerHTML = "500";
+                } else if (passtype == "monthly") {
+                    document.getElementById('pass_price').value = "3500";
+                    document.getElementById('price').innerHTML = "3500";
+                }
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <fieldset>
+        <div id="registerFor" name="mydiv">
+            <form action="" method="Post" name="registrationform" id="form1" onsubmit="return validateRegForm()">
+
+
+                <table align="center" cellspacing="0px" width="60%" cellpadding="10">
+                    <th colspan="2">
+                        <center>Registration Form</center>
+                    </th>
+                    <tr>
+
+                        <td><label for="firstName :">First Name</label></td>
+                        <td><input type="text" name="FirstName" id="fname" onchange="return checkFirstName()"
+                                placeholder="Type firstName here"></td>
+                        <td><span id="fname_error"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="lastName">Last Name</label></td>
+                        <td><input type="text" name="LastName" id="lname" onchange="return checkLastName()"
+                                placeholder="Type lastName here"></td>
+                        <td><span id="lname_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender</label></td>
+                        <td><input type="radio" id="m1" name="gender" value="male" onchange="return checkGender()">Male
+                            <input type="radio" id="f1" name="gender" value="female"
+                                onchange="return checkGender()">Female</td>
+                        <td><span id="gender_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="emailId">Email Id</label></td>
+                        <td><input type="text" id="email_id" name="emailId" onchange="return checkEmail()"
+                                placeholder="Type Email id here"></td>
+                        <td><span id="email_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password</label></td>
+                        <td><input type="password" name="password" id="password" onchange="return checkPassword()"
+                                placeholder="password"></td>
+                        <td><span id="pass_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><span> *Password should contains
+                                Uppercase, Lowercase, Numeric, Alphanumeric, and length minimum 8</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="confirm password">Confirm password</label></td>
+                        <td><input type="password" name="confirm password" id="confirm_password"
+                                oninput="return check(this.id)" onchange="return validateRegForm()"
+                                placeholder="confirm password"></td>
+                        <td><span id="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="contactnumber">ContactNo.</label></td>
+                        <td><input type="text" id="contact" name="contactNumber" maxlength="10" size="10"
+                                onchange="return checkContactNumber()" placeholder="contact no."></td>
+                        <td><span id="con_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="type">Organization</label></td>
+                        <td><select name="organization_type" id="org_type" onchange="return checkOrganization()">
+                                <option value="">Select Organization</option>
+                                <option value="metacube">Metacube</option>
+                                <option value="infosys">Infosys</option>
+                                <option value="wipro">Wipro</option>
+                                <option value="capg">Capgemini</option>
+                            </select></td>
+                        <td><span id="org_error"></span></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2">
+                            <center>
+                                <input type="submit" value="Register">
+                            </center>
+                        </td>
+
+
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+        <div id="carRegistration" style="display:none">
+            <form action="" method="post" name="form2" onsubmit="return valCarform()">
+                <table align="center">
+                    <th colspan="3">
+                        <p>
+                            You have succesfully registered : <strong> Registration_Id
+                                is 1</strong>
+                        </p>
+                    </th>
+                    <tr>
+                        <td><label for="car name">CarName</label></td>
+                        <td><input type="text" id="car_name" name="CarName" onchange=" return checkCarName()"
+                                placeholder="Car name"></td>
+                        <td><span id="car_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="type">Vehicle Type</label></td>
+                        <td><select name="vehicle_type" id="veh_type" onchange=" return checkVehicleType()">
+                                <option value="">Select vehicle</option>
+                                <option value="Cycle">Cycle</option>
+                                <option value="Two wheeler">Two wheeler</option>
+                                <option value="Four wheeler">Four wheeler</option>
+                            </select></td>
+                        <td><span id="veh_error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="vehicle number">Vehicle Number</label></td>
+                        <td><input type="int" id="veh_num" name="vehicleNumber" maxlength="10"
+                                onchange=" return checkVehicleNumber()" placeholder="Vehicle Number"></td>
+                        <td><span>Ex:RJ17CAXXXX</span><br> <span id="num_error"></span></td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="Employee_id">EmployeeId</label></td>
+                        <td><input type="hidden" id="employee_id" name="Employee_id"
+                                value="${employee_id}">1</td>
+                    </tr>
+                    <tr>
+                        <td><label for="Discription">Discription</label></td>
+                        <td><textarea name="Discription" id="Discription" cols="30" rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Pass type</label></td>
+                        <td><select name="typeofpass" id="pass_type" onclick="return calculate()"
+                                onchange=" return checkPassType()">
+                                <option value="">Select pass</option>
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select><span id="pass_error"></span></td>
+
+                    </tr>
+                    <tr>
+                        <td>Total Price(INR) =<span id="price"></span>Rs
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2"><input type="hidden" name="pass_price" id="pass_price"> <input type="Submit"
+                                name="CollectPass"></td>
+
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="Thank_you" style="display: none">
+            <center>
+                <p><strong>Thank You</strong></p>
+            </center>
+        </div>
+
     </fieldset>
 </body>
+
 </html>
