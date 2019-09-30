@@ -31,7 +31,7 @@ public class ApplicationContext {
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/Student_Management_System");
 		dataSource.setUsername("root");
-		dataSource.setPassword("Jyoti@123");
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 
