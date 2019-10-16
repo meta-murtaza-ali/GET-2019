@@ -1,192 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="ISO-8859-1">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/411740ddde.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ParkingSystem.css" />
+    <script type="text/javascript" src="ParkingSystem.js">
+    </script>
     <title>Metacube Parking System</title>
 </head>
 
-<body background="se.jpg">
-    <!-- Navigation Bar -->
-    <nav>
-        &nbsp; <a href="#addEmployee">
-            <font size="5px"> Add Employee </font>
-        </a> &nbsp; &nbsp; &nbsp; &nbsp;
-        <a href="#addVehicle">
-            <font size="5px"> Add Vehicle </font>
-        </a> &nbsp; &nbsp; &nbsp; &nbsp;
-        <a href="#price">
-            <font size="5px"> Pricing </font>
-        </a> &nbsp; &nbsp; &nbsp; &nbsp;
-        <a href="#feedback">
-            <font size="5px"> Give Feedback </font>
-        </a>
-    </nav>
-    <br>
-    <br>
-    <div align="center">
-        <img src="logo-metacube.png" />
+<body>
+
+    <div id="formField">
+        <h1>Welcome to Metacube Parking System</h1>
+        <label id="idLabel">Please Enter Your Name! </label>
+        <input type="text" id="input" />
+        <a id="a" href="#" onclick="next();"><i class="fas fa-arrow-right"></i></a>
     </div>
-    <br>
-    <br>
-    <!-- Registration Form -->
-    <div align="center" id="addEmployee">
-        <form name="RegistrationForm">
-            <h1>
-                Registration Form
-            </h1>
-            <table cellspacing="5px" cellpadding="5px">
-                <tr>
-                    <td><label>
-                            <font size="5px">Full name :</font>
-                        </label></td>
-                    <td><input type="text" name="name" placeholder="Name" pattern="[A-z0-9À-ž\s]){2,}" required /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Gender :</font>
-                        </label></td>
-                    <td><select name="gender" required>
-                            <option selected>---Select One Please---</option>
-                            <option>Female</option>
-                            <option>Male</option>
-                            <option>Other</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Email Id :</font>
-                        </label></td>
-                    <td><input type="email" name="mail" placeholder="Email Address" required />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Password :</font>
-                        </label></td>
-                    <td><input type="password" name="pass" placeholder="Password"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                            required /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Confirm Password :</font>
-                        </label></td>
-                    <td><input type="password" name="repass" placeholder="Re-enter Password" required /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Contact Number :</font>
-                        </label></td>
-                    <td><input type="tel" name="contact" placeholder="Contact number" pattern="^\d{4}-\d{3}-\d{4}$"
-                            required /></td>
-                </tr>
-            </table>
-            <br> <input type="submit" value="Register" />
-        </form>
+
+    <div id="formGender" style="display:none">
+        <h1>Welcome to Metacube Parking System</h1>
+        <label id="idLabelGender"></label>
+        <br>
+        <input type="radio" id="gender" name="gender" value="male" />Male<input type="radio" id="gender" name="gender"
+            value="Female" />Female
+        <a id="b" href="#" onclick="next9();"><i class="fas fa-arrow-right"></i></a>
     </div>
-    <br>
-    <br>
-    <br>
-    <!-- Add Vehicle Form -->
-    <div align="center" id="addVehicle">
-        <form name="VehicleDetailForm">
-            <h1>
-                Vehicle Details Form
-            </h1>
-            <table cellspacing="5px" cellpadding="5px">
-                <tr>
-                    <td><label>
-                            <font size="5px">Name :</font>
-                        </label></td>
-                    <td><input type="text" name="name" placeholder="Vehicle Name" pattern="[A-z0-9À-ž\s]){2,}" required /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Vehicle Type :</font>
-                        </label></td>
-                    <td><select name="vehType" required>
-                            <option selected>---Select One Please---</option>
-                            <option>Cylce</option>
-                            <option>Motorlcyle</option>
-                            <option>Four Wheelers</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Vehicle Number :</font>
-                        </label></td>
-                    <td><input type="text" name="vehNum" placeholder="RJ XX XXXX"
-                            pattern="^[A-Z]{2} [0-9]{2} [A-Z]{2} [0-9]{4}$" required /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <font size="5px">Identification :</font>
-                        </label></td>
-                    <td><textarea name="identification" required> </textarea> </td>
-                </tr>
-            </table>
-            <br> <input type="submit" value="Register" />
-        </form>
+
+    <div id="selectVehType" style="display:none">
+        <h1>Welcome to Metacube Parking System</h1>
+        <label id="idLabelVehType"></label>
+        <br>
+        <select name="vehicle" id="vehicleType">
+            <option value="">--select value--</option>
+            <option value="Cycle">Cycle</option>
+            <option value="MotorCycle">Motor Cycle</option>
+            <option value="FourWheeler">Four Wheeler</option>
+        </select>
+        <a id="c" href="#" onclick="next6();"><i class="fas fa-arrow-right"></i></a>
     </div>
-    <br>
-    <br>
-    <br>
-    <!-- Feedback Form -->
-    <div align="center" id="feedback">
-        <form name="FeedbackForm">
-            <h1>Get In Touch</h1>
-            <table>
-                <tr>
-                    <td><label><font size="5px">Name :</font></label></td>
-                    <td><input type="text" name="name" pattern="[A-Za-z]" required/></td>
-                </tr>
-                <tr>
-                    <td><label><font size="5px">Email :</font></label></td>
-                    <td><input type="email" name="mail"  required /></td>
-                </tr>
-                <tr>
-                    <td><label><font size="5px">Subject :</font></label></td>
-                    <td><input type="text" name="subject" required/></td>
-                </tr>
-                <tr>
-                    <td><label><font size="5px">Message :</font></label></td>
-                    <td><textarea name="msg"></textarea></td>
-                </tr>
-            </table>
-            <br> <input type="submit" value="Send Email" />
-        </form>
-    </div>
-    <br>
-    <br>
-    <br>
-    <!-- Price Form -->
-    <div align="center" id="price">
-        <div align="center" id="cycle">
-            <h1>Cycle</h1>
-            <span><em>$5 Daily</em></span> <br>
-            <span><em>$100 Monthly</em></span> <br>
-            <span><em>$500 Yearly</em></span><br><br>
-            <input type="button" value="Purchase Now" />
+
+    <div id="selectPassType" style="display:none">
+            <h1>Welcome to Metacube Parking System</h1>
+            <label id="idLabelPassType"></label>
+            <br>
+            <select name="pass" id="passType">
+                <option value="">--select value--</option>
+                <option value="Daily">Daily</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+            </select>
+            <a id="d" href="#" onclick="next8();"><i class="fas fa-arrow-right"></i></a>
         </div>
-        <div align="center" id="motorcycle">
-            <h1>MotorCycle</h1>
-            <span><em>$10 Daily</em></span> <br>
-            <span><em>$200 Monthly</em></span> <br>
-            <span><em>$1000 Yearly</em></span><br><br>
-            <input type="button" value="Purchase Now" />
-        </div>
-        <div align="center" id="fourwheeler">
-            <h1>Four Wheelers</h1>
-            <span><em>$20 Daily</em></span> <br>
-            <span><em>$500 Monthly</em></span> <br>
-            <span><em>$3500 Yearly</em></span><br><br>
-            <input type="button" value="Purchase Now" />
-        </div>
-    </div>
+
 </body>
 
 </html>
