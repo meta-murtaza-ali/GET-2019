@@ -1,0 +1,64 @@
+body{
+    background-color:rgb(97, 153, 190);
+}
+
+#formField{
+  color:white;
+  font-size:xx-large;
+  margin:20% auto;
+  width:70%;
+  text-align: center;
+}
+#formGender{
+    color:white;
+    font-size:xx-large;
+    margin:20% auto;
+    width:70%;
+    text-align: center;
+  }
+
+#selectVehType{
+    color:white;
+    font-size:xx-large;
+    margin:20% auto;
+    width:70%;
+    text-align: center;
+  }
+#selectCyclePassType{
+    color:white;
+    font-size:xx-large;
+    margin:20% auto;
+    width:70%;
+    text-align: center;
+  }
+#selectTwoPassType{
+    color:white;
+    font-size:xx-large;
+    margin:20% auto;
+    width:70%;
+    text-align: center;
+  }
+#selectFourPassType{
+    color:white;
+    font-size:xx-large;
+    margin:20% auto;
+    width:70%;
+    text-align: center;
+  }
+input,select,textarea{
+    border:none;
+    border-radius: 4px;
+    line-height: 200%;
+    margin-left: 30px;
+    color:palevioletred;
+    font-size:30px;
+}
+
+i{
+    color:rgb(10, 45, 202);
+}
+
+@keyframes end{
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}

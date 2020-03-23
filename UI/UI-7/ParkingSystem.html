@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/411740ddde.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="ParkingSystem.css" />
+	<script type="text/javascript" src="ParkingSystem.js">
+	</script>
+	<title>Metacube Parking System</title>
+</head>
+
+<body>
+
+	<div id="formField">
+		<h1>Welcome to Metacube Parking System</h1>
+		<label id="idLabel">Please Enter Your Name! </label>
+		<input type="text" id="input" />
+		<a id="a" href="#" onclick="next();"><i class="fas fa-arrow-right"></i></a>
+	</div>
+
+	<div id="formGender" style="display:none">
+		<h1>Welcome to Metacube Parking System</h1>
+		<label id="idLabelGender"></label>
+		<br>
+		<input type="radio" id="gender" name="gender" value="male" />Male<input type="radio" id="gender" name="gender"
+			value="Female" />Female
+		<a id="b" href="#" onclick="next9();"><i class="fas fa-arrow-right"></i></a>
+	</div>
+
+	<div id="selectVehType" style="display:none">
+		<h1>Welcome to Metacube Parking System</h1>
+		<label id="idLabelVehType"></label>
+		<br>
+		<select name="vehicle" id="vehicleType">
+			<option value="">--select value--</option>
+			<option value="Cycle">Cycle</option>
+			<option value="MotorCycle">Motor Cycle</option>
+			<option value="FourWheeler">Four Wheeler</option>
+		</select>
+		<a id="c" href="#" onclick="next6();"><i class="fas fa-arrow-right"></i></a>
+	</div>
+
+	<div id="selectCyclePassType" style="display:none">
+		<h1>Welcome to Metacube Parking System</h1>
+		<label id="idLabelCycleType"></label>
+		<br>
+		<select name="pass" id="Cycle">
+			<option value="">--select value--</option>
+			<option value="5">5 Daily</option>
+			<option value="100">100 Monthly</option>
+			<option value="500">500 Yearly</option>
+		</select>
+		<a id="d" href="#" onclick="next8();"><i class="fas fa-arrow-right"></i></a>
+	</div>
+	<div id="selectTwoPassType" style="display:none">
+		<h1>Welcome to Metacube Parking System</h1>
+		<label id="idLabelTwoType"></label>
+		<br>
+		<select name="pass" id="TwoWheeler">
+			<option value="">--select value--</option>
+			<option value="10">10 Daily</option>
+			<option value="200">200 Monthly</option>
+			<option value="1000">1000 Yearly</option>
+		</select>
+		<a id="d" href="#" onclick="next8();"><i class="fas fa-arrow-right"></i></a>
+	</div>
+	<div id="selectFourPassType" style="display:none">
+		<h1>Welcome to Metacube Parking System</h1>
+		<label id="idLabelFourType"></label>
+		<br>
+		<select name="pass" id="FourWheeler">
+			<option value="">--select value--</option>
+			<option value="20">20 Daily</option>
+			<option value="500">500 Monthly</option>
+			<option value="3500">3500 Yearly</option>
+		</select>
+		<a id="d" href="#" onclick="next8();"><i class="fas fa-arrow-right"></i></a>
+	</div>
+
+</body>
+
+</html>
