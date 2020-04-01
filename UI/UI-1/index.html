@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/411740ddde.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ParkingSystem.css" />
+    <script type="text/javascript" src="ParkingSystem.js">
+    </script>
+    <title>Metacube Parking System</title>
+</head>
+
+<body>
+
+    <div id="formField">
+        <h1>Welcome to Metacube Parking System</h1>
+        <label id="idLabel">Please Enter Your Name! </label>
+        <input type="text" id="input" />
+        <a id="a" href="#" onclick="next();"><i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div id="formGender" style="display:none">
+        <h1>Welcome to Metacube Parking System</h1>
+        <label id="idLabelGender"></label>
+        <br>
+        <input type="radio" id="gender" name="gender" value="male" />Male<input type="radio" id="gender" name="gender"
+            value="Female" />Female
+        <a id="b" href="#" onclick="next9();"><i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div id="selectVehType" style="display:none">
+        <h1>Welcome to Metacube Parking System</h1>
+        <label id="idLabelVehType"></label>
+        <br>
+        <select name="vehicle" id="vehicleType">
+            <option value="">--select value--</option>
+            <option value="Cycle">Cycle</option>
+            <option value="MotorCycle">Motor Cycle</option>
+            <option value="FourWheeler">Four Wheeler</option>
+        </select>
+        <a id="c" href="#" onclick="next6();"><i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div id="selectPassType" style="display:none">
+            <h1>Welcome to Metacube Parking System</h1>
+            <label id="idLabelPassType"></label>
+            <br>
+            <select name="pass" id="passType">
+                <option value="">--select value--</option>
+                <option value="Daily">Daily</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+            </select>
+            <a id="d" href="#" onclick="next8();"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+</body>
+
+</html>
